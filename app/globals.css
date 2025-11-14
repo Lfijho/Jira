@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+
+@theme inline {
+  /* Warm and dark color palette */
+  --color-burnt-orange: #D64A2B;
+  --color-burnt-orange-light: #E55A3B;
+  --color-burnt-orange-dark: #B33D24;
+  --color-gold: #C17A33;
+  --color-gold-light: #D4AF37;
+  --color-coral: #F17A5E;
+  --color-amber: #FFA500;
+  --color-charcoal: #1A1A1A;
+  --color-dark-brown: #2D2219;
+  --color-black-nuance: #0F0F0F;
+  --color-deep-brown: #1A140D;
+  --color-cream: #F5F1E8;
+  
+  /* Semantic tokens for theming */
+  --color-primary: var(--color-burnt-orange);
+  --color-primary-hover: var(--color-burnt-orange-light);
+  --color-secondary: var(--color-gold);
+  --color-accent: var(--color-coral);
+  --color-background: var(--color-deep-brown);
+  --color-surface: var(--color-charcoal);
+  --color-surface-elevated: #242424;
+  --color-border: rgba(209, 74, 43, 0.2);
+  --color-text: var(--color-cream);
+  --color-text-muted: rgba(245, 241, 232, 0.6);
+  --color-text-subtle: rgba(245, 241, 232, 0.4);
+  
+  /* Status colors */
+  --color-status-open: var(--color-amber);
+  --color-status-progress: var(--color-primary);
+  --color-status-review: var(--color-gold);
+  --color-status-done: #4CAF50;
+  
+  /* Priority colors */
+  --color-priority-low: #64B5F6;
+  --color-priority-medium: var(--color-amber);
+  --color-priority-high: var(--color-coral);
+  --color-priority-critical: #EF5350;
+  
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(209, 74, 43, 0.3);
+  
+  /* Fonts - Using Inter for professional typography */
+  --font-sans: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-text font-sans;
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "cv05" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+</parameter>
